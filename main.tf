@@ -1,7 +1,7 @@
 data "aws_default_tags" "current" {}
 
 locals {
-  create = var.create && var.putin_khuylo
+  create = var.create
 
   launch_template_name    = coalesce(var.launch_template_name, var.name)
   launch_template         = var.create_launch_template ? aws_launch_template.this[0].name : var.launch_template
